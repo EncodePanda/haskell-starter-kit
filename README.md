@@ -1,6 +1,6 @@
 # haskell-template-project
 
-This project creates a template to modern Haskell development.
+This project creates a template for modern Haskell development.
 
 ## Key features
 
@@ -11,6 +11,7 @@ This project creates a template to modern Haskell development.
 - [ ] direnv
 - [ ] profiler support (eventlog2html, hs2pretty, heap and memory plotter)
 - [ ] testing framework (hedgehog, hspec-hedgehog, hedgehog-golden ...)
+- [ ] haskell language server
 
 ## How to create new project using this template
 
