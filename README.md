@@ -4,10 +4,11 @@ This project creates a template for modern Haskell development.
 
 ## Key features
 
-- [x] GHC
-- [x] hlint
+- [x] GHC (8.10.1)
+- [x] hlint (3.2.1)
 - [x] ghcid
-- [ ] stylish-haskell
+- [x] stylish-haskell (0.12.2.0)
+- [ ] cabal-fmt
 - [ ] direnv
 - [ ] profiler support (eventlog2html, hs2pretty, heap and memory plotter)
 - [ ] testing framework (hedgehog, hspec-hedgehog, hedgehog-golden ...)
