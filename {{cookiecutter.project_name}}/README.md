@@ -30,6 +30,3 @@ trace: Using index-state: 2020-05-31T00:00:00Z for hoogle
 trace: Using latest index state for cabal-install!
 trace: Using index-state: 2020-09-14T00:00:00Z for cabal-install
 ```
-
-## TODO
-ghc version, haskell.nix hash

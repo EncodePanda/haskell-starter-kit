@@ -11,7 +11,8 @@ This project creates a template for modern Haskell development.
 - [ ] direnv
 - [ ] profiler support (eventlog2html, hs2pretty, heap and memory plotter)
 - [ ] testing framework (hedgehog, hspec-hedgehog, hedgehog-golden ...)
-- [ ] haskell language server
+- [ ] Emacs integration show-how
+- [ ] (maybe) haskell language server
 
 ## How to create new project using this template
 
