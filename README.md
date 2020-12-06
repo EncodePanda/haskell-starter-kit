@@ -75,10 +75,10 @@ Linking /Users/rabbit/projects/Foo/dist-newstyle/build/x86_64-osx/ghc-8.10.1/Foo
 No hints
 ```
 
-#### Use ghid
+#### Use ghcid
 
 ```
-[nix-shell:~/projects/Foo]$ ghcid -c 'cabal repl'
+[nix-shell:~/projects/Foo]$ ghcid
 Loading cabal repl ...
 Build profile: -w ghc-8.10.1 -O1
 In order, the following will be built (use -v for more details):
