@@ -5,14 +5,14 @@ This project creates a template for modern Haskell development.
 ## Key features
 
 - [x] GHC (8.10.1)
-- [x] hlint (3.2.1)
+- [x] linter (hlint [3.2.1], apply-refact)
 - [x] ghcid
 - [x] stylish-haskell (0.12.2.0)
 - [ ] cabal-fmt
 - [ ] direnv
 - [ ] profiler support (eventlog2html, hs2pretty, heap and memory plotter)
 - [ ] testing framework (hedgehog, hspec-hedgehog, hedgehog-golden ...)
-- [ ] Emacs integration show-how
+- [ ] Emacs integration example
 - [ ] (maybe) haskell language server
 
 ## How to create new project using this template
