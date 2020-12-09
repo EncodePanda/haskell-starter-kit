@@ -13,7 +13,7 @@ in
 
     shellHook = ''
       format-all () {
-         git rev-parse --show-toplevel | xargs -i stylish-haskell -ric "{}/.stylish-haskell.yaml" $@
+        git rev-parse --show-toplevel | xargs -i stylish-haskell -ric "{}/.stylish-haskell.yaml" $@
       }
 
       hlint-all () {
