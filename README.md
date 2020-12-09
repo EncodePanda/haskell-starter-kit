@@ -8,7 +8,7 @@ This project is a dynamic template for a modern Haskell development environment.
 - [x] linter (hlint [3.2.1], apply-refact)
 - [x] ghcid
 - [x] stylish-haskell (0.12.2.0)
-- [ ] cabal-fmt
+- [x] cabal-fmt
 - [ ] direnv
 - [ ] profiler support (eventlog2html, hs2pretty, heap and memory plotter)
 - [ ] testing framework (hedgehog, hspec-hedgehog, hedgehog-golden ...)
