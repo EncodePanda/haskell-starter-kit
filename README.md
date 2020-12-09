@@ -1,6 +1,6 @@
 # haskell-template-project
 
-This project creates a template for modern Haskell development.
+This project is a dynamic template for a modern Haskell development environment. With a single command it bootstraps a *haskell.nix* project, shell with rich ecosystem (hlint, ghcid), out of the box support for profiling, Emacs integration and many more.
 
 ## Key features
 
