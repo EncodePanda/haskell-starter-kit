@@ -4,8 +4,8 @@ This project is a dynamic template for a modern Haskell development environment.
 
 ## Key features
 
-- [x] GHC (8.10.1)
-- [x] linter (hlint [3.2.1], apply-refact)
+- [x] GHC (8.10.2)
+- [x] linter: hlint (3.2.1), apply-refact
 - [x] ghcid
 - [x] stylish-haskell (0.12.2.0)
 - [x] cabal-fmt

@@ -3,7 +3,7 @@
 
 let
   hsPkgs = pkgs.haskell-nix.stackProject {
-    compiler-nix-name = "ghc8101";
+    compiler-nix-name = "ghc8102";
     modules = [];
     src = pkgs.fetchFromGitHub {
       owner  = "mpickering";
