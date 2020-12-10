@@ -23,6 +23,18 @@ This project is a dynamic template for a modern Haskell development environment.
 nix-shell -p cookiecutter git --run 'cookiecutter gh:EncodePanda/haskell-template-project'
 ```
 
+### Set defaults
+
+Reentering the defaults (like github user name) might be tedious and boring. That's why it is a good practice to setup the defaults.
+Modify `~/.cookiecutterrc` by providing default value for github user and author name.
+In my case this is:
+
+```
+default_context:
+  "gh_user": "EncodePanda"
+  "author_name": "Paweł Szulc"
+```
+
 ### Example
 
 #### Create the project using template
@@ -93,16 +105,4 @@ All good (1 module, at 23:56:46)
 
 
 
-```
-
-
-### Set defaults
-
-Modify `~/.cookiecutterrc` by providing default value for github user and author name.
-In my case this is:
-
-```
-default_context:
-  "gh_user": "EncodePanda"
-  "author_name": "Paweł Szulc"
 ```
