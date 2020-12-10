@@ -11,7 +11,7 @@ This project is a dynamic template for a modern Haskell development environment.
 - [x] cabal-fmt
 - [ ] direnv
 - [ ] profiler support (eventlog2html, hs2pretty, heap and memory plotter)
-- [ ] testing framework (hedgehog, hspec-hedgehog, hedgehog-golden ...)
+- [x] testing framework (hspec, hedgehog, hspec-hedgehog)
 - [ ] Emacs integration example
 - [ ] (maybe) haskell language server
 
