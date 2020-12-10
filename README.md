@@ -148,6 +148,11 @@ ask linter to automatically fix them
 ```
 [nix-shell:~/foo]$ hlint-all-fix
 
+[nix-shell:~/foo]$ cat src/Lib.hs
+module Lib where
+foo :: String -> Int
+foo _ = 10
+
 [nix-shell:~/foo]$ hlint-all
 No hints
 ```
