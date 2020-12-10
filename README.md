@@ -35,59 +35,124 @@ default_context:
   "author_name": "Paweł Szulc"
 ```
 
-### Example
+## Example
 
-#### Create the project using template
+### 1. Create the project using template
 
 ```
-➜  projects nix-shell -p cookiecutter git --run 'cookiecutter gh:EncodePanda/haskell-template-project'
-project_name [Enter project name]: Foo
-project_synopsis [Enter project synopsis (short description)]: Foo is for Bar
+➜  ~ nix-shell -p cookiecutter git --run 'cookiecutter gh:EncodePanda/haskell-template-project'
+You've downloaded /Users/rabbit/.cookiecutters/haskell-template-project before. Is it okay to delete and re-download it? [yes]:
+project_name [Enter project name]: foo
+project_synopsis [Enter project synopsis]: Example project
 module [Foo]:
-category [Unclassified]:
+category [Unclassified]: Example
 author_name [Paweł Szulc]:
 gh_user [EncodePanda]:
+formatter_indent [2]:
+formatter_columns [110]: 80
 ```
-#### Enter nix-shell
+
+### 2. Enter nix-shell
 
 *note*: Before entering the nix-shell consider reading README.md, there is a section about using Nix cache - so that you don't have to recompile the whole world
 
 ```
-➜  projects cd Foo
-➜  Foo nix-shell
-trace: gitSource.nix: /Users/rabbit/projects/Foo does not seem to be a git repository,
+➜  ~ cd foo
+➜  foo nix-shell
+trace: gitSource.nix: /Users/rabbit/foo does not seem to be a git repository,
 assuming it is a clean checkout.
-trace: Using latest index state for Foo!
-trace: Using index-state: 2020-09-14T00:00:00Z for Foo
+trace: Using latest index state for foo!
 (...)
 trace: Using latest index state for cabal-install!
 trace: Using index-state: 2020-09-14T00:00:00Z for cabal-install
 ```
 
-#### Build the project
+### 3. Build the project
 
 ```
-[nix-shell:~/projects/Foo]$ cabal build
-Warning: The package list for 'hackage.haskell.org' does not exist. Run 'cabal
-update' to download it.RemoteRepo {remoteRepoName = "hackage.haskell.org",
+[nix-shell:~/foo]$ cabal build
+Resolving dependencies...
+Build profile: -w ghc-8.10.2 -O1
 (...)
-Configuring library for Foo-0.1.0.0..
-Preprocessing library for Foo-0.1.0.0..
-Building library for Foo-0.1.0.0..
-[1 of 1] Compiling Lib              ( src/Lib.hs, /Users/rabbit/projects/Foo/dist-newstyle/build/x86_64-osx/ghc-8.10.1/Foo-0.1.0.0/build/Lib.o, /Users/rabbit/projects/Foo/dist-newstyle/build/x86_64-osx/ghc-8.10.1/Foo-0.1.0.0/build/Lib.dyn_o )
+Building library for foo-0.1.0.0..
+[1 of 1] Compiling Lib              ( src/Lib.hs, /Users/rabbit/foo/dist-newstyle/build/x86_64-osx/ghc-8.10.2/foo-0.1.0.0/build/Lib.o, /Users/rabbit/foo/dist-newstyle/build/x86_64-osx/ghc-8.10.2/foo-0.1.0.0/build/Lib.dyn_o )
 (...)
-[1 of 1] Compiling Main             ( app/Main.hs, /Users/rabbit/projects/Foo/dist-newstyle/build/x86_64-osx/ghc-8.10.1/Foo-0.1.0.0/x/Foo/build/Foo/Foo-tmp/Main.o )
-Linking /Users/rabbit/projects/Foo/dist-newstyle/build/x86_64-osx/ghc-8.10.1/Foo-0.1.0.0/x/Foo/build/Foo/Foo ...
+[1 of 1] Compiling Main             ( app/Main.hs, /Users/rabbit/foo/dist-newstyle/build/x86_64-osx/ghc-8.10.2/foo-0.1.0.0/x/foo-exe/build/foo-exe/foo-exe-tmp/Main.o )
+Linking /Users/rabbit/foo/dist-newstyle/build/x86_64-osx/ghc-8.10.2/foo-0.1.0.0/x/foo-exe/build/foo-exe/foo-exe ...
 ```
 
-#### Use hlint
+### 4. Run tests
 
 ```
-[nix-shell:~/projects/Foo]$ hlint .
+[nix-shell:~/foo]$ cabal test --test-show-details=streaming
+Build profile: -w ghc-8.10.2 -O1
+(...)
+Running 1 test suites...
+Test suite foo-test: RUNNING...
+
+Foo.Example
+  unit tests
+    should work
+  hedgehog property tests
+    should work
+
+Finished in 0.0022 seconds
+2 examples, 0 failures
+Test suite foo-test: PASS
+Test suite logged to:
+1 of 1 test suites (1 of 1 test cases) passed.
+
+```
+
+### 5. Use linter
+
+look for issues, non found
+
+```
+[nix-shell:~/foo]$ hlint-all
 No hints
 ```
 
-#### Use ghcid
+introduce code that is not perfect
+
+```
+[nix-shell:~/foo]$ echo "foo :: String -> Int" >> src/Lib.hs; echo "foo = \_ -> 10" >> src/Lib.hs
+
+[nix-shell:~/foo]$ cat src/Lib.hs
+module Lib where
+foo :: String -> Int
+foo = \_ -> 10
+```
+
+look for issues one more time, found it!
+
+```
+[nix-shell:~/foo]$ hlint-all
+src/Lib.hs:3:1-14: Warning: Redundant lambda
+Found:
+  foo = \ _ -> 10
+Perhaps:
+  foo _ = 10
+
+src/Lib.hs:3:7-14: Suggestion: Use const
+Found:
+  \ _ -> 10
+Perhaps:
+  const 10
+
+2 hints
+```
+
+ask linter to automatically fix them
+
+```
+[nix-shell:~/foo]$ hlint-all-fix
+
+[nix-shell:~/foo]$ hlint-all
+No hints
+```
+
+### 6. Use ghcid
 
 ```
 [nix-shell:~/projects/Foo]$ ghcid
