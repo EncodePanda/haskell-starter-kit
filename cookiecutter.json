@@ -6,6 +6,6 @@
     "author_name": "Your Name",
     "gh_user": "your_github_username",
     "formatter_indent" : "2",
-    "formatter_columns" : "110"
-
+    "formatter_columns" : "110",
+    "create_direnv" : "n"
 }
