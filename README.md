@@ -13,7 +13,6 @@ This project is a dynamic template for a modern Haskell development environment.
 - [ ] profiler support (eventlog2html, hs2pretty, heap and memory plotter)
 - [x] testing framework (hspec, hedgehog, hspec-hedgehog)
 - [ ] Emacs integration example
-- [ ] (maybe) haskell language server
 
 ## How to create new project using this template
 
