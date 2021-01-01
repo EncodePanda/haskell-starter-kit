@@ -31,6 +31,7 @@ hsPkgs.shellFor {
   buildInputs =
     [ pkgs.haskellPackages.ghcid
     pkgs.haskellPackages.hp2pretty
+    pkgs.haskellPackages.pointfree
     cabal-fmt
     hlint
     apply-refact
