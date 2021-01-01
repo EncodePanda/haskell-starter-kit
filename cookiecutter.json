@@ -1,7 +1,8 @@
 {
     "project_name": "Enter project name",
+    "project_name_slug": "{{ cookiecutter.project_name|lower|replace(' ', '-')|replace('_', '-') }}",
     "project_synopsis": "Enter project synopsis",
-    "module": "{{cookiecutter.project_name|title|replace('-', '')}}",
+    "module": "{{cookiecutter.project_name_slug|title|replace('-', '')}}",
     "category": "Unclassified",
     "author_name": "Your Name",
     "gh_user": "your_github_username",

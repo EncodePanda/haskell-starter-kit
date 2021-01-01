@@ -3,7 +3,7 @@
 }:
 pkgs.haskell-nix.cabalProject {
   src = pkgs.haskell-nix.haskellLib.cleanGit {
-    name = "{{cookiecutter.project_name}}";
+    name = "{{cookiecutter.project_name_slug}}";
     src = ./.;
   };
   compiler-nix-name = haskellCompiler;

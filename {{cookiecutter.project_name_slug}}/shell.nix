@@ -15,7 +15,7 @@ hsPkgs.shellFor {
   shellHook = ''
     format-all () {
     git rev-parse --show-toplevel | xargs -i stylish-haskell -ric "{}/.stylish-haskell.yaml" $@
-    cabal-fmt --inplace {{cookiecutter.project_name}}.cabal
+    cabal-fmt --inplace {{cookiecutter.project_name_slug}}.cabal
     }
 
     hlint-all () {

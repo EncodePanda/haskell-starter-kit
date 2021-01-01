@@ -20,11 +20,11 @@ Otherwise Nix will have to build several copies of GHC, before building this pro
 Enter the nix-shell
 
 ```
-$> nix-shellnix-shell
-trace: Using latest index state for {{cookiecutter.project_name}}!
+$> nix-shell
+trace: Using latest index state for {{cookiecutter.project_name_slug}}!
 trace: Using index-state: 2020-09-14T00:00:00Z for haskell-template-project
-trace: Shell for {{cookiecutter.project_name}}
-trace: Shell for {{cookiecutter.project_name}}
+trace: Shell for {{cookiecutter.project_name_slug}}
+trace: Shell for {{cookiecutter.project_name_slug}}
 trace: Using index-state: 2020-05-31T00:00:00Z for hoogle
 (...)
 trace: Using latest index state for cabal-install!
