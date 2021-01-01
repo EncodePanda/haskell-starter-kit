@@ -12,5 +12,4 @@ let
       sha256 = "0wyamn4w3lsayhsqs6h60f0m337b1p5byw1frmcyima3pqsgprvl";
     };
   };
-in
-  hsPkgs.apply-refact.components.exes.refactor
+in hsPkgs.apply-refact.components.exes.refactor

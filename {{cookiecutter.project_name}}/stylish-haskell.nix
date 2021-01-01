@@ -13,5 +13,4 @@ let
       sha256 = "1jc844x8v93xgnl6fjrk31gb2zr96nxbqmgmnc4hdfhfyajh5y7w";
     };
   };
-in
-  hsPkgs.stylish-haskell.components.exes.stylish-haskell
+in hsPkgs.stylish-haskell.components.exes.stylish-haskell

@@ -13,5 +13,4 @@ let
       sha256 = "0y0c7vk9p6wj7vx4cfn6h0mg62jy03d0s54ydhmwv5c7112bcpqf";
     };
   };
-in
-  hsPkgs.hlint.components.exes.hlint
+in hsPkgs.hlint.components.exes.hlint
