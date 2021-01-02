@@ -8,6 +8,6 @@
     "gh_user": "your_github_username",
     "formatter_indent" : "2",
     "formatter_columns" : "110",
-    "create_direnv" : "n",
-    "enable_emacs_integration" : "y"
+    "enable_emacs_integration" : "y",
+    "create_direnv" : "{{cookiecutter.enable_emacs_integration}}"
 }
