@@ -10,7 +10,6 @@ This project is a dynamic template for a modern Haskell development environment.
 - [x] stylish-haskell (0.12.2.0)
 - [x] cabal-fmt
 - [x] direnv
-- [ ] profiler support (eventlog2html, hs2pretty, heap and memory plotter)
 - [x] testing framework (hspec, hedgehog, hspec-hedgehog)
 - [ ] Emacs integration example
 
