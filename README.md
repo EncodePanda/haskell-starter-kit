@@ -4,14 +4,23 @@ This project is a dynamic template for a modern Haskell development environment.
 
 ## Key features
 
-- [x] GHC (8.10.2)
-- [x] linter: hlint (3.2.1), apply-refact
-- [x] ghcid
-- [x] stylish-haskell (0.12.2.0)
-- [x] cabal-fmt
-- [x] direnv
-- [x] testing framework (hspec, hedgehog, hspec-hedgehog)
-- [x] sleek Emacs integration
+* Latests building environment
+  * GHC (8.10.2)
+  * Cabal (3.2.0.0)
+  * ghcid
+* Linter support
+  * hlint (3.2.1)
+  * apply-refact
+* Formatters
+  * stylish-haskell (0.12.2.0)
+  * cabal-fmt
+* Testing environment for both unit and property-based tests
+  * hspec
+  * hedgehog
+* Other
+  * local Hoogle server
+  * direnv
+  * sleek Emacs integration
 
 ## How to create new project using this template
 
