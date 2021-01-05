@@ -11,7 +11,7 @@ let
 in
 hsPkgs.shellFor {
   tools = { cabal = "3.2.0.0"; };
-
+  withHoogle = true;
   shellHook = ''
     format-all () {
     git rev-parse --show-toplevel | xargs -i stylish-haskell -ric "{}/.stylish-haskell.yaml" $@

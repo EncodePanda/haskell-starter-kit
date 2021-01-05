@@ -174,3 +174,12 @@ All good (1 module, at 23:56:46)
 
 
 ```
+
+### 7. Hoogle suuprt
+
+```
+[nix-shell:~/projects/foo]$ hoogle server --local
+Server started on port 8080
+Reading log...0.00s
+2021-01-05T15:39:39.488174 - Server starting on port 8080 and host/IP Host "127.0.0.1"
+```
