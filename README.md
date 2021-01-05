@@ -11,6 +11,7 @@ This project is a dynamic template for a modern Haskell development environment.
 * Linter support
   * hlint (3.2.1)
   * apply-refact
+  * pointfree
 * Formatters
   * stylish-haskell (0.12.2.0)
   * cabal-fmt
@@ -191,4 +192,26 @@ All good (1 module, at 23:56:46)
 Server started on port 8080
 Reading log...0.00s
 2021-01-05T15:39:39.488174 - Server starting on port 8080 and host/IP Host "127.0.0.1"
+```
+
+### 8. Pointfree supprot
+
+
+You can use pointfree in the shell
+```
+[nix-shell:~/projects/foo]$ pointfree "foo list = fmap (+1) list"
+foo = fmap (1 +)
+```
+
+or you can use it in the REPL
+
+```
+[nix-shell:~/projects/foo]$ cabal repl
+Loaded GHCi configuration from /Users/rabbit/projects/foo/.ghci
+[1 of 1] Compiling Lib              ( src/Lib.hs, interpreted )
+Ok, one module loaded.
+
+λ> :pf foo list = fmap (+1) list
+foo = fmap (1 +)
+*Lib
 ```
