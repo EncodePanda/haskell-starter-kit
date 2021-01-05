@@ -1,4 +1,4 @@
-# haskell-template-project
+# Haskell Starter-Kit
 
 This project is a dynamic template for a modern Haskell development environment. With a single command it bootstraps a *haskell.nix* project, shell with rich ecosystem (hlint, ghcid), out of the box support for profiling, Emacs integration and many more.
 
@@ -18,7 +18,7 @@ This project is a dynamic template for a modern Haskell development environment.
 *pre-requirement*: you have [Nix installed](https://nixos.org/download.html) on your system
 
 ```
-nix-shell -p cookiecutter git --run 'cookiecutter gh:EncodePanda/haskell-template-project'
+nix-shell -p cookiecutter git --run 'cookiecutter gh:EncodePanda/haskell-starter-kit
 ```
 
 ### Set defaults
