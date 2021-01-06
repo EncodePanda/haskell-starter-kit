@@ -185,7 +185,7 @@ All good (1 module, at 23:56:46)
 
 ```
 
-### 7. Hoogle suuprt
+### 7. Hoogle support
 
 ```
 [nix-shell:~/projects/foo]$ hoogle server --local
@@ -194,7 +194,7 @@ Reading log...0.00s
 2021-01-05T15:39:39.488174 - Server starting on port 8080 and host/IP Host "127.0.0.1"
 ```
 
-### 8. Pointfree supprot
+### 8. Pointfree support
 
 
 You can use pointfree in the shell
