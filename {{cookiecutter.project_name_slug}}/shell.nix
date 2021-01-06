@@ -8,6 +8,7 @@ let
   apply-refact = import ./apply-refact.nix { inherit pkgs; };
   stylish-haskell = import ./stylish-haskell.nix { inherit pkgs; };
   cabal-fmt = import ./cabal-fmt.nix { inherit pkgs; };
+  weeder = import ./weeder.nix { inherit pkgs; };
 in
 hsPkgs.shellFor {
   tools = { cabal = "3.2.0.0"; };
@@ -36,5 +37,6 @@ hsPkgs.shellFor {
     hlint
     apply-refact
     stylish-haskell
+    weeder
     ];
 }

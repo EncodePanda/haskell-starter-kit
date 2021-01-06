@@ -12,6 +12,7 @@ This project is a dynamic template for a modern Haskell development environment.
   * hlint (3.2.1)
   * apply-refact
   * pointfree
+  * weeder (2.1.3)
 * Formatters
   * stylish-haskell (0.12.2.0)
   * cabal-fmt
@@ -214,4 +215,37 @@ Ok, one module loaded.
 λ> :pf foo list = fmap (+1) list
 foo = fmap (1 +)
 *Lib
+```
+
+### 9. Weeder support
+
+```
+[nix-shell:~/projects/foo]$ weeder
+Weeds detected: 0
+
+[nix-shell:~/projects/foo]$ echo "notUsed :: Int" >> src/Lib.hs
+[nix-shell:~/projects/foo]$ echo "notUsed = 10" >> src/Lib.hs
+
+[nix-shell:~/projects/foo]$ cat src/Lib.hs
+module Lib where
+notUsed :: Int
+notUsed = 10
+
+[nix-shell:~/projects/foo]$ cabal build
+(...)
+Preprocessing executable 'foo-exe' for foo-0.1.0.0..
+Building executable 'foo-exe' for foo-0.1.0.0..
+(...)
+Linking ~/projects/foo/dist-newstyle/build/x86_64-osx/ghc-8.10.2/
+
+[nix-shell:~/projects/foo]$ weeder
+src/Lib.hs:3:1: error: notUsed is unused
+
+       1 ┃ module Lib where
+       2 ┃ notUsed :: Int
+       3 ┃ notUsed = 10
+
+    Delete this definition or add ‘Lib.notUsed’ as a root to fix this error.
+
+Weeds detected: 1
 ```
